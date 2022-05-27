@@ -1,0 +1,15 @@
+<!-- view for searched artist albums on click -->
+
+<% albums.forEach((album)=>{%>
+    <div>
+        <% album.images.forEach((image, index)=>{%>
+            <% if (index === 0) { %>
+                <img src="<%= image.url %>" alt="image missing" />
+            <% } %>   
+        <%})%>
+    </div>
+    <div>
+        <p><%= album.name %></p>
+        <button><a href="/search/<%= album.id %>">View Tracks</a></button>
+    </div>
+<%}) %> 
